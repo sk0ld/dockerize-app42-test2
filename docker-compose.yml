@@ -3,6 +3,8 @@ version: '3'
 services:
   dev-maven:
     build: dev/
+    depends_on:
+      - db
     volumes:
       - app42-content:/usr/share/app-src/
       - app42-config:/usr/share/app-src/WebContent/ 
@@ -11,7 +13,6 @@ services:
      image: tomcat:8.5.13-jre8-alpine
      depends_on:
        - dev-maven
-       - db
      ports:
        - "8080:8080"
      volumes:
