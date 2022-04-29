@@ -21,7 +21,7 @@ services:
        - app42-config:/usr/local/tomcat/ROOT
 
   db:
-    image: mariadb:10.1
+    image: mysql:5.7
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: DBMegaPa$$123
