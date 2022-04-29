@@ -16,7 +16,7 @@ services:
      ports:
        - "8080:8080"
      volumes:
-       - app42-content:/usr/local/tomcat/webapps/
+       - app42-content:/usr/local/tomcat/webapps/ROOT
        - app42-config:/usr/local/tomcat/ROOT/
 
   db:
