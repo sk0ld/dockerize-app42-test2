@@ -20,7 +20,7 @@ services:
        - app42-config:/usr/local/tomcat/ROOT
 
   db:
-    image: myslq:5.7.38
+    image: myslq:5.6
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: DBMegaPa$$123
