@@ -3,32 +3,36 @@ version: '3'
 services:
   dev-maven:
     build: dev/
+    container_name: dev-maven
     volumes:
-      - app42-content:/usr/share/app-src
-     # - app42-config:/usr/share/app-conf 
+      - app42-content:/usr/share/app-war
+      - app42-config:/usr/share/app-conf 
 
   prod-tomcat:
-     image: tomcat:8.5.13-jre8-alpine
+     image: tomcat:9.0-jre8-alpine
+     container_name: prod-tomcat
      depends_on:
        - dev-maven
        - db
      ports:
        - "8080:8080"
      volumes:
-       - app42-content:/usr/local/tomcat/webapps/ROOT
-       #- app42-config:/usr/local/tomcat/ROOT
+       - app42-content:/usr/local/tomcat/webapps
+       - app42-config:/usr/local/tomcat/ROOT
 
   db:
     image: mariadb:10.1
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: DBMegaPa$$123
-      MYSQL_USER: root
+      MYSQL_USER: app42admin
       MYSQL_DATABASE: app42-db
+    ports:
+     - 3306
     volumes:
       - app42-db:/var/lib/mysql
 
 volumes:
   app42-content:
-  #app42-config:
+  app42-config:
   app42-db:
