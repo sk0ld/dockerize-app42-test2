@@ -24,7 +24,8 @@ services:
     image: mysql:5.7
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: DBMegaPa$$123
+      MYSQL_PASSWORD: DBMegaPass123
+      MYSQL_ROOT_PASSWORD: DBMegaPass123
       MYSQL_USER: app42admin
       MYSQL_DATABASE: app42-db
     ports:
