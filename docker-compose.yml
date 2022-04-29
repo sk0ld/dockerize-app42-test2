@@ -26,7 +26,7 @@ services:
       MYSQL_USER: root
       MYSQL_DATABASE: app42-db
     volumes:
-      - db:/var/lib/mysql
+      - app42-db:/var/lib/mysql
 
 volumes:
   app42-content:
