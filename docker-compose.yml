@@ -20,7 +20,7 @@ services:
      volumes:
       # - app42-content:/usr/local/tomcat/webapps/
        - app42-config:/usr/local/tomcat/ROOT
-       - app42-webdata:/usr/local/tomcat/webapps/
+       - app42-webdata:/usr/local/tomcat/webapps/ROOT
 
   db:
     image: mysql:5.7
