@@ -5,7 +5,7 @@ services:
     build: dev/
     container_name: dev-maven
     volumes:
-      - app42-content:/usr/share/app-src/WebContent
+      - app42-content:/usr/share/app-content
       - app42-config:/usr/share/app-conf
       - app42-webdata:/usr/share/app-src/target
 
