@@ -5,5 +5,3 @@ RUN git clone https://github.com/sk0ld/clone-app42-test.git ./
 RUN mvn clean && mvn install
 WORKDIR /usr/share/app-conf
 RUN cp /usr/share/app-src/WebContent/Config.properties /usr/share/app-conf
-WORKDIR /usr/share/app-src/target
-RUN cp -R /usr/share/app-src/src/com/shephertz/app42/paas/sample/* .

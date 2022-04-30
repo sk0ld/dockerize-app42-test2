@@ -5,7 +5,6 @@ services:
     build: dev/
     container_name: dev-maven
     volumes:
-     # - app42-content:/usr/share/app-content
       - app42-config:/usr/share/app-conf
       - app42-webdata:/usr/share/app-src/target
 
@@ -18,9 +17,8 @@ services:
      ports:
        - "8080:8080"
      volumes:
-      # - app42-content:/usr/local/tomcat/webapps/
        - app42-config:/usr/local/tomcat/ROOT
-       - app42-webdata:/usr/local/tomcat/webapps/ROOT
+       - app42-webdata:/usr/local/tomcat/webapps
 
   db:
     image: mysql:5.7
@@ -34,7 +32,6 @@ services:
       - app42-db:/var/lib/mysql
 
 volumes:
-  #app42-content:
   app42-config:
   app42-db:
   app42-webdata:
