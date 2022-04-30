@@ -30,8 +30,6 @@ services:
       MYSQL_ROOT_PASSWORD: DBMegaPass123
       MYSQL_USER: app42admin
       MYSQL_DATABASE: app42-db
-    ports:
-     - 3306
     volumes:
       - app42-db:/var/lib/mysql
 
