@@ -3,6 +3,7 @@ RUN apk update && apk add git
 WORKDIR /usr/share/app-src
 RUN git clone https://github.com/sk0ld/clone-app42-test.git ./
 RUN mvn clean && mvn install
+RUN cp -R WebContent/* ./target/
 WORKDIR /usr/share/app-src/target
 RUN mv *.war app42.war
 WORKDIR /usr/share/app-conf
