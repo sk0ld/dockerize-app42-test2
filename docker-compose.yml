@@ -5,7 +5,7 @@ services:
     build: dev/
     container_name: dev-maven
     volumes:
-      - app42-content:/usr/share/app-war
+      - app42-content:/usr/share/WebContent
       - app42-config:/usr/share/app-conf 
 
   prod-tomcat:
@@ -17,7 +17,7 @@ services:
      ports:
        - "8080:8080"
      volumes:
-       - app42-content:/usr/local/tomcat/webapps
+       - app42-content:/usr/local/tomcat/webapps/ROOT
        - app42-config:/usr/local/tomcat/ROOT
 
   db:
